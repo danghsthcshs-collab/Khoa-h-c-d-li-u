@@ -1,0 +1,52 @@
+-- Bước 1: Xóa bảng cũ nếu đã tồn tại để làm mới hoàn toàn
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS customers;
+
+-- Bước 2: Tạo bảng dữ liệu mẫu
+CREATE TABLE products (
+    product_id SERIAL PRIMARY KEY,
+    product_name VARCHAR(100),
+    price DECIMAL(10, 2)
+);
+
+CREATE TABLE customers (
+    customer_id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100),
+    phone_number VARCHAR(15)
+);
+
+-- Bước 3: Chèn dữ liệu để có cái mà chạy SELECT
+INSERT INTO products (product_name, price) VALUES 
+('Laptop Dell', 15000000),
+('Chuột Gaming', 500000),
+('Bàn phím cơ', 1200000),
+('Màn hình 24 inch', 3500000);
+
+INSERT INTO customers (full_name, phone_number) VALUES 
+('Nguyễn Văn Nam', '0912345678'),
+('Trần Thị Hoa', '0988776655'),
+('Lê Văn Tám', '0900112233');
+
+-- =============================================
+-- ĐÂY LÀ CODE LAB 3 CỦA BẠN (CHẠY ĐƯỢC LUÔN)
+-- =============================================
+
+-- Bài 1: Lấy tên và giá, đổi tên cột
+SELECT product_name AS TenSanPham, price AS DonGia 
+FROM products;
+
+-- Bài 2: Tìm khách hàng có chữ 'Văn'
+SELECT full_name, phone_number 
+FROM customers 
+WHERE full_name LIKE '%Văn%';
+
+-- Bài 3: Sắp xếp sản phẩm theo giá giảm dần
+SELECT product_name, price 
+FROM products 
+ORDER BY price DESC;
+
+-- Bài 4: Lấy 3 sản phẩm rẻ nhất
+SELECT product_name, price 
+FROM products 
+ORDER BY price ASC 
+LIMIT 3;
