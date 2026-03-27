@@ -1,8 +1,7 @@
--- Bước 1: Xóa bảng cũ nếu đã tồn tại để làm mới hoàn toàn
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS customers;
 
--- Bước 2: Tạo bảng dữ liệu mẫu
+
 CREATE TABLE products (
     product_id SERIAL PRIMARY KEY,
     product_name VARCHAR(100),
@@ -15,7 +14,6 @@ CREATE TABLE customers (
     phone_number VARCHAR(15)
 );
 
--- Bước 3: Chèn dữ liệu để có cái mà chạy SELECT
 INSERT INTO products (product_name, price) VALUES 
 ('Laptop Dell', 15000000),
 ('Chuột Gaming', 500000),
@@ -27,9 +25,6 @@ INSERT INTO customers (full_name, phone_number) VALUES
 ('Trần Thị Hoa', '0988776655'),
 ('Lê Văn Tám', '0900112233');
 
--- =============================================
--- ĐÂY LÀ CODE LAB 3 CỦA BẠN (CHẠY ĐƯỢC LUÔN)
--- =============================================
 
 -- Bài 1: Lấy tên và giá, đổi tên cột
 SELECT product_name AS TenSanPham, price AS DonGia 
