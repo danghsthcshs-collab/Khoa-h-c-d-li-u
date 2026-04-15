@@ -1,4 +1,4 @@
--- PHẦN I: Bài 1 - JOIN cơ bản
+-- PHẦN I: Bài 1 
 -- 1. INNER JOIN
 SELECT oi.order_id, p.product_name, oi.quantity, p.price
 FROM orderdetails oi
@@ -10,7 +10,7 @@ FROM customers c
 LEFT JOIN orders o ON c.customer_id = o.customer_id;
 
 
--- Bài 2: JOIN nâng cao và UNION
+-- Bài 2: 
 -- 1. RIGHT JOIN
 SELECT p.product_name, oi.order_id
 FROM orderdetails oi
@@ -22,7 +22,7 @@ UNION
 SELECT supplier_name, contact_phone FROM suppliers;
 
 
--- PHẦN II: Bài 3 - Subquery trong WHERE và SELECT
+-- PHẦN II: Bài 3 
 -- 1. Subquery với IN
 SELECT product_name, price
 FROM products
@@ -38,7 +38,7 @@ SELECT product_name, price,
 FROM products;
 
 
--- Bài 4: Subquery với FROM và EXISTS
+-- Bài 4: 
 -- 1. Subquery trong FROM
 SELECT order_id, total_value
 FROM (
